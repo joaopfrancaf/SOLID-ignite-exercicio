@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: ignite
+    ports:
+      - 5432:5432
