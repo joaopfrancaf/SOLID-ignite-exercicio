@@ -1,5 +1,5 @@
 import { Prisma, User } from "@prisma/client";
 
-export interface userRepository {
-    create(data: Prisma.UserCreateInput): Promise<User>
+export interface UserRepository {
+    save(data: Prisma.UserCreateInput): Promise<User>
 }
