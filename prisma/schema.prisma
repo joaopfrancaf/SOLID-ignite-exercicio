@@ -18,3 +18,11 @@ model User {
   name      String   @db.VarChar(255)
   password_hash  String
 }
+
+model RefeicaoFeita {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(255)
+  description String
+  data      DateTime 
+  diet      String
+}

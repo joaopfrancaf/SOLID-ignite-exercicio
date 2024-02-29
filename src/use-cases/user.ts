@@ -27,6 +27,8 @@ export class User {
         password_hash: password_hash,
       })
 
+      return user
+
      }
 
 }
