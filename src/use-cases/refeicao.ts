@@ -1,6 +1,7 @@
 import { RefeicaoRepository } from "../repository/refeicao-repository";
 
 interface refeicaoRequest {
+    id?: number
     name: string
     description: string
     diet: string
@@ -29,4 +30,18 @@ export class RefeicaoFeita {
  
         return refeicao
     }
+
+    async edit(data: refeicaoRequest) {
+
+        const editRef = await this.refeicaoRepository.edit({
+            id: data.id,
+            description: data.description,
+            diet: data.diet,
+            name: data.name
+        })
+
+        return editRef
+    }
+
+    
 }

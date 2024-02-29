@@ -12,4 +12,20 @@ export class PrismaRefeicaoRepository implements RefeicaoRepository {
 
         return refeicao
     }
+
+    async edit (data: Prisma.RefeicaoFeitaUncheckedCreateInput) {
+
+        const editedRefeicao =  await prisma.refeicaoFeita.update({
+            where: {
+                id: data.id
+            },
+            data: {
+                name: data.name,
+                description: data.description,
+                diet: data.diet
+            }
+        })
+
+        return editedRefeicao
+    }
 }
