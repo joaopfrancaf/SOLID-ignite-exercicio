@@ -7,6 +7,10 @@ interface refeicaoRequest {
     diet: string
 }
 
+interface refeicaoDelRequest {
+    id: number
+}
+
 interface refeicaoResponse {
     refeicao: RefeicaoFeita
 }
@@ -41,6 +45,13 @@ export class RefeicaoFeita {
         })
 
         return editRef
+    }
+
+    async delete(data: refeicaoDelRequest ) {
+
+        await this.refeicaoRepository.delete({
+            id: data.id
+        })
     }
 
     

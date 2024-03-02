@@ -28,4 +28,13 @@ export class PrismaRefeicaoRepository implements RefeicaoRepository {
 
         return editedRefeicao
     }
+
+    async delete(data: Prisma.RefeicaoFeitaUncheckedUpdateInput) {
+
+        await prisma.refeicaoFeita.delete({
+            where: {
+                id: data.id as number // Cast the id property to number (assegurar que é numero)
+            },
+        })
+    }
 }
