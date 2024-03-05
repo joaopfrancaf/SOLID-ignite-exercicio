@@ -7,7 +7,7 @@ export class InMemoryUserRepo implements UserRepository {
 
     async save (data: Prisma.UserCreateInput) {
         const user = {
-            id: 1,
+            id: Math.floor(Math.random() * 1000),
             name: data.name,
             password_hash: data.password_hash,
             sessionId: data.sessionId as string //acredito que aqui não seja o ideal, pois sessionId no banco não pode ser opcional
