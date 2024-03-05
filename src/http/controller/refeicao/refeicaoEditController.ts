@@ -9,7 +9,8 @@ export async function refeicaoEditController(request: FastifyRequest, response: 
         id: z.number(),
         name: z.string(),
         description: z.string(),
-        diet: z.string()
+        diet: z.string(),
+        userId: z.number()
     })
 
     const editRefeicao = editSchema.parse(request.body)
@@ -21,8 +22,9 @@ export async function refeicaoEditController(request: FastifyRequest, response: 
         id: editRefeicao.id,
         description: editRefeicao.description,
         diet: editRefeicao.diet,
-        name: editRefeicao.name
+        name: editRefeicao.name,
+        userId: editRefeicao.userId
     })
 
-    return response.send({refeicaoedit})
+    return response.status(201).send({refeicaoedit})
 }

@@ -14,20 +14,20 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  name      String   @db.VarChar(255)
-  password_hash  String
-  sessionId String?
+  id              Int             @id @default(autoincrement())
+  name            String          @db.VarChar(255)
+  password_hash   String
+  sessionId       String?
   refeicoesFeitas RefeicaoFeita[]
 }
 
 model RefeicaoFeita {
-  id        Int      @id @default(autoincrement())
-  name      String   @db.VarChar(255)
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(255)
   description String
-  data      DateTime 
-  diet      String
-  
-  user     User?        @relation(fields: [userId], references: [id])
-  userId   Int?
+  data        DateTime
+  diet        String
+
+  user   User? @relation(fields: [userId], references: [id])
+  userId Int?
 }

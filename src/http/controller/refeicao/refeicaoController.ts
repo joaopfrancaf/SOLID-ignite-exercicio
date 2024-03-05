@@ -9,7 +9,8 @@ export async function refeicaoController(request: FastifyRequest, response: Fast
     const refeicaoSchema = z.object({
         name: z.string(),
         description: z.string(),
-        diet: z.string()
+        diet: z.string(),
+        userId: z.number()
     })
 
     const refeicao = refeicaoSchema.parse(request.body)
@@ -20,6 +21,9 @@ export async function refeicaoController(request: FastifyRequest, response: Fast
     refeicaoRepository.save({
         description: refeicao.description,
         diet: refeicao.diet,
-        name: refeicao.name
+        name: refeicao.name,
+        userId: refeicao.userId
     })
+
+    return response.status(201).send()
 }
