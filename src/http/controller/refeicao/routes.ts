@@ -6,6 +6,6 @@ import { refeicaoDelController } from "./refeicaoDelController";
 export async function refeicaoRoutes(app: FastifyInstance) {
     
     app.post('/refeicao', refeicaoController)
-    app.post('/refeicaoedit', refeicaoEditController)
+    app.put('/refeicaoedit', refeicaoEditController)
     app.delete('/refeicaodelete', refeicaoDelController)
 }

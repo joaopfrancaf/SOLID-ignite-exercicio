@@ -5,6 +5,7 @@ interface refeicaoRequest {
     name: string
     description: string
     diet: string
+    userId: number
 }
 
 interface refeicaoDelRequest {
@@ -29,7 +30,8 @@ export class RefeicaoFeita {
             data: new Date(),
             description: data.description,
             diet: data.diet,
-            name: data.name
+            name: data.name,
+            userId: data.userId
         })
  
         return refeicao

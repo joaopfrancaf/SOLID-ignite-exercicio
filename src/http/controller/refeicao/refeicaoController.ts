@@ -2,6 +2,7 @@ import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 import { PrismaRefeicaoRepository } from "../../../repository/prisma/prisma-refeicao-repository";
 import { RefeicaoFeita } from "../../../use-cases/refeicao";
+import { randomUUID } from "crypto";
 
 export async function refeicaoController(request: FastifyRequest, response: FastifyReply) {
 
