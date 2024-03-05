@@ -56,5 +56,12 @@ export class RefeicaoFeita {
         })
     }
 
+    async getAll( ) {
+
+        const all = await this.refeicaoRepository.getAll()
+
+        return all
+    }
+
     
 }

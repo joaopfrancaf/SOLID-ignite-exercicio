@@ -18,7 +18,7 @@ export async function refeicaoController(request: FastifyRequest, response: Fast
     const prismaRefeicaoRepository = new PrismaRefeicaoRepository()
     const refeicaoRepository = new RefeicaoFeita(prismaRefeicaoRepository)
 
-    refeicaoRepository.save({
+    await refeicaoRepository.save({
         description: refeicao.description,
         diet: refeicao.diet,
         name: refeicao.name,

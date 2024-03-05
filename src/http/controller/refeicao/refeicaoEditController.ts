@@ -18,7 +18,7 @@ export async function refeicaoEditController(request: FastifyRequest, response: 
     const prismaRefeicaoRepository = new PrismaRefeicaoRepository()
     const refeicaoRepository = new RefeicaoFeita(prismaRefeicaoRepository)
 
-    const refeicaoedit = refeicaoRepository.edit({
+    const refeicaoedit = await refeicaoRepository.edit({
         id: editRefeicao.id,
         description: editRefeicao.description,
         diet: editRefeicao.diet,

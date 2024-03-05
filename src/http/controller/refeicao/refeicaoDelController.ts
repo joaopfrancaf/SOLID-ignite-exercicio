@@ -14,7 +14,7 @@ export async function refeicaoDelController(request: FastifyRequest, response: F
     const prismaRefeicaoRepository = new PrismaRefeicaoRepository()
     const refeicaoRepository = new RefeicaoFeita(prismaRefeicaoRepository)
 
-    refeicaoRepository.delete({
+    await refeicaoRepository.delete({
         id: id
     })
 }

@@ -37,4 +37,11 @@ export class PrismaRefeicaoRepository implements RefeicaoRepository {
             },
         })
     }
+
+    async getAll() {
+
+        const all = await prisma.refeicaoFeita.findMany()
+
+        return all
+    }
 }
